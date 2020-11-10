@@ -7,6 +7,14 @@ $("div").on("click", ".saveBtn", function(){
     $(this).closest(".row").find(".saveBtn").text("book")
 })
 
-$("div").on("change", "textarea", function() {
-    $(this).closest(".row").find(".saveBtn").text("pending")
+$("div").on("input", "textarea", function() {
+    var defaultValue = $(this).val()
+    var currentText = $(this).text()
+
+    if(defaultValue === currentText) {
+        $(this).closest(".row").find(".saveBtn").text("book")
+    } else {
+        $(this).closest(".row").find(".saveBtn").text("pending")
+    }
+    
 })
