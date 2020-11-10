@@ -17,7 +17,8 @@ var createHourRow = function(timeOfDay)  {
 }
 
 var createHourTask = function(timeOfDay) {
-    var hourTask = $("<textarea>").addClass("col-10 past description")
+    var hourTask = $("<textarea>").addClass("col-10 description")
+    hourTask.addClass(pastPresentFuture(timeOfDay))
     if (todayKey in plannerObj) {
         if (timeOfDay.format('H') in plannerObj[todayKey]) {
             hourTask.text(plannerObj[todayKey][timeOfDay.format('H')])
@@ -29,13 +30,25 @@ var createSaveBtn = function() {
     var saveBtn = $("<i>").addClass("col-1 saveBtn material-icons").text("book")
     return saveBtn
 }
-
 var createHours = function() {
     var hourNum = 11;
     for (i = 7; i < hourNum+7; i++) {
         var timeOfDay = moment().startOf('day').add(i, "hour")
         createHourRow(timeOfDay)
     }
+}
+
+var pastPresentFuture = function(date) {
+    var currentTime = moment().startOf('hour');
+    var bucketTime = date
+
+    if(bucketTime.isBefore(currentTime)) {
+        return 'past'
+    } else if(bucketTime.isSame(currentTime)) {
+        return 'present'
+    } else if(bucketTime.isAfter(currentTime)) {
+        return 'future'
+    } 
 }
 
 updateDayText()
