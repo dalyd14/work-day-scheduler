@@ -4,10 +4,10 @@ todayKey = moment().format("MMMDDYYYY")
 console.log(plannerObj[todayKey])
 $("#currentDay").text(todayString)
 
-var createHourRow = function(timeText)  {
+var createHourRow = function(timeOfDay)  {
     var hourRow = $("<div>").addClass("row")
-    var hourText = $("<div>").addClass("col-1 time-block hour").text(timeText)
-    var hourTask = createHourTask(timeText)
+    var hourText = $("<div>").addClass("col-1 time-block hour").text(timeOfDay.format('hA'))
+    var hourTask = createHourTask(timeOfDay)
     var hourSave = createSaveBtn()
 
     hourRow.append(hourText, hourTask, hourSave)
@@ -16,7 +16,12 @@ var createHourRow = function(timeText)  {
 }
 
 var createHourTask = function(timeOfDay) {
-    var hourTask = $("<textarea>").addClass("col-10 past description").text(plannerObj[todayKey][parseInt(timeOfDay)])
+    var hourTask = $("<textarea>").addClass("col-10 past description")
+    if (todayKey in plannerObj) {
+        if (timeOfDay.format('H') in plannerObj[todayKey]) {
+            hourTask.text(plannerObj[todayKey][timeOfDay.format('H')])
+        }
+    }
     return hourTask
 }
 var createSaveBtn = function() {
@@ -27,9 +32,10 @@ var createSaveBtn = function() {
 var createHours = function() {
     var hourNum = 11;
     for (i = 7; i < hourNum+7; i++) {
-        var timeOfDay = moment().startOf('day').add(i, "hour").format('hA')
+        var timeOfDay = moment().startOf('day').add(i, "hour")
         createHourRow(timeOfDay)
     }
 }
 
+console.log(plannerObj)
 createHours()
