@@ -43,3 +43,14 @@ $(".jumbotron").on("change", ".date-picker", function(){
     updateDayText(chosenDate);
     createHours();
 })
+
+$(".jumbotron").on("click", "#next-day", function(){
+    currentDay = currentDay.add(1, 'days')
+    updateDayText(currentDay);
+    createHours();
+})
+$(".jumbotron").on("click", "#last-day", function(){
+    currentDay = currentDay.subtract(1, 'days')
+    updateDayText(currentDay);
+    createHours();
+})
