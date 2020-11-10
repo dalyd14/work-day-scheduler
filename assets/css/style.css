@@ -27,8 +27,15 @@ textarea{
 }
 
 .dateDisplay {
+  cursor: pointer;
+
   font-size: 1.25rem;
   margin-top: 1.25rem;
+}
+
+.date-picker {
+  width: fit-content;
+  margin: auto;
 }
 
 .description{
