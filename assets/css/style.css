@@ -30,12 +30,12 @@ textarea{
   cursor: pointer;
 
   font-size: 1.25rem;
-  margin-top: 1.25rem;
+  margin: .75rem 0;
 }
 
 .date-picker {
   width: fit-content;
-  margin: auto;
+  display: inline;
 }
 
 .description{

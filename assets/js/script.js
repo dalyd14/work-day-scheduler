@@ -1,8 +1,8 @@
 var updateDayText = function(currentDay) {
     var dateText = $("<div>").text(currentDay.format('MMMM Do, YYYY'))
     var dayOfWeek = $("<div>").text(currentDay.format('dddd'))
-    
-    if($(".jumbotron").children().last().attr("id") === "currentDay") {
+    var displayEl = $(".jumbotron .d-flex").find("#currentDay")
+    if(displayEl.length > 0) {
         $("#currentDay").append(dateText, dayOfWeek)
     } else {
         var dateDisplay = $("<div>")

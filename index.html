@@ -29,8 +29,17 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <div id="currentDay" class="badge badge-light dateDisplay"></div>
+      <div class="d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-light d-flex">
+          <span class="material-icons">arrow_back</span>
+        </button>
+        <button id="currentDay" class="btn btn-light dateDisplay"></button>
+        <button type="button" class="btn btn-light d-flex">
+          <span class="material-icons">arrow_forward</span>
+        </button>
+      </div>
     </header>
+
     <div class="container">
       <!-- Timeblocks go here -->
     </div>
