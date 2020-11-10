@@ -4,7 +4,6 @@ var updateDayText = function() {
     $("#currentDay").append(dateText, dayOfWeek)
 }
 
-
 var createHourRow = function(timeOfDay)  {
     var hourRow = $("<div>").addClass("row")
     var hourText = $("<div>").addClass("col-1 time-block hour").text(timeOfDay.format('hA'))
