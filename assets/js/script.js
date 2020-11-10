@@ -1,7 +1,3 @@
-var todayString = null;
-todayString = moment().format('MMMM Do, YYYY')
-todayKey = moment().format("MMMDDYYYY")
-console.log(plannerObj[todayKey])
 $("#currentDay").text(todayString)
 
 var createHourRow = function(timeOfDay)  {
