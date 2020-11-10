@@ -33,5 +33,4 @@ var createHours = function() {
     }
 }
 
-console.log(plannerObj)
 createHours()

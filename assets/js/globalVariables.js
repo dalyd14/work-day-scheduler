@@ -1,7 +1,5 @@
-var todayString = null;
+var today = moment()
 
-theDay = moment()
+var todayString = today.format('MMMM Do, YYYY')
 
-todayString = theDay.format('MMMM Do, YYYY')
-
-todayKey = theDay.format("MMMDDYYYY")
+var todayKey = today.format("MMMDDYYYY")

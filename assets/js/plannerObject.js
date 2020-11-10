@@ -1,22 +1,11 @@
-var plannerObj = {
-    Nov092020: {
-        7: "coffee",
-        8: "",
-        9: "",
-        10: "",
-        11: "Southpark",
-        12: "",
-        13: "",
-        14: "Work",
-        15: "",
-        16: "",
-        17: "",
-    }
-}
+var plannerObj = {}
 
 var saveTask = function(taskDate, taskHour, taskText) {
+    if(!(taskDate in plannerObj)) {
+        plannerObj[taskDate] = {}
+    }
     plannerObj[taskDate][taskHour] = taskText
-    localStorage.setItem('plannerObj', plannerObj)
+    localStorage.setItem('plannerObj', JSON.stringify(plannerObj))
 }
 
 var getTasks = function() {
@@ -24,7 +13,7 @@ var getTasks = function() {
     if (!savedTasks) {
         plannerObj = {}
     } else {
-        plannerObj = savedTasks
+        plannerObj = JSON.parse(savedTasks)
     }
 }
 
