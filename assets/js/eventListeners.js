@@ -13,7 +13,7 @@ $("div").on("input", "textarea", function() {
     var currentText = $(this).text()
 
     if(defaultValue === currentText) {
-        $(this).closest(".row").find(".saveBtn").text("book")
+        $(this).closest(".row").find(".saveBtn").text("verified")
     } else {
         $(this).closest(".row").find(".saveBtn").text("pending")
     }

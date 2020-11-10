@@ -26,10 +26,14 @@ textarea{
   padding-bottom: 2rem;
 }
 
+.display-3 {
+  font-size: 3rem;
+}
+
 .dateDisplay {
   cursor: pointer;
 
-  font-size: 1.25rem;
+  font-size: .8rem;
   margin: .75rem 0;
 }
 
@@ -45,6 +49,7 @@ textarea{
 .time-block{
   text-align: right;
   padding-top: 15px;
+  font-size: .7rem;
 }
 
 .row {
@@ -74,6 +79,10 @@ textarea{
   color: black;
 }
 
+#last-day, #next-day {
+  margin: 15px;
+}
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -86,9 +95,24 @@ textarea{
   align-items: center;
 }
 
-i.saveBtn:hover {
+span.saveBtn:hover {
   font-size: 20px;
   color: #000000;
   transition: all .3s ease-in-out;
   cursor: pointer;
 }
+
+@media (min-width: 576px) {
+  .dateDisplay { 
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .time-block{
+    font-size: 1rem;
+  }  
+  .display-3 {
+    font-size: 4.5rem;
+  }
+}
+
