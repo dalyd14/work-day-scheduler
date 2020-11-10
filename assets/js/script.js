@@ -1,4 +1,9 @@
-$("#currentDay").text(todayString)
+var updateDayText = function() {
+    var dateText = $("<div>").text(today.format('MMMM Do, YYYY'))
+    var dayOfWeek = $("<div>").text(today.format('dddd'))
+    $("#currentDay").append(dateText, dayOfWeek)
+}
+
 
 var createHourRow = function(timeOfDay)  {
     var hourRow = $("<div>").addClass("row")
@@ -33,4 +38,5 @@ var createHours = function() {
     }
 }
 
+updateDayText()
 createHours()
