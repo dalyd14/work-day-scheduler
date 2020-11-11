@@ -26,27 +26,38 @@
   </head>
 
   <body>
+    <!-- This header will display the title, description and the UI for changing and displaying dates -->
     <header class="jumbotron">
+      <!-- Title and description -->
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- group that holds all of the interfaces to change the dates -->
       <div class="d-flex justify-content-center align-items-center">
+        <!-- this button will help the user navigate backwards by one day -->
         <button id="last-day" type="button" class="btn btn-light d-flex" disabled>
           <span class="material-icons">arrow_back</span>
         </button>
+        <!-- This will either display the date or the datepicker to change the date -->
         <button id="currentDay" class="btn btn-light dateDisplay"></button>
+        <!-- this button will help the user navigate forwards by one day -->
         <button id="next-day" type="button" class="btn btn-light d-flex">
           <span class="material-icons">arrow_forward</span>
         </button>
       </div>
     </header>
 
+    <!-- This container will hold the days hour buckets -->
     <div class="container">
       <!-- Timeblocks go here -->
     </div>
 
+    <!-- Link to the jQuery library -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Link to the jQuery UI library for the datepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <!-- link to moment.js for handling dates -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- links for my js files -->
     <script src="./assets/js/eventListeners.js"></script>
     <script src="./assets/js/plannerObject.js"></script>
     <script src="./assets/js/script.js"></script>
