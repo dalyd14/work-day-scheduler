@@ -1,3 +1,5 @@
+var currentDay = moment()
+
 var updateDayText = function(currentDay) {
     var dateText = $("<div>").text(currentDay.format('MMMM Do, YYYY'))
     var dayOfWeek = $("<div>").text(currentDay.format('dddd'))
