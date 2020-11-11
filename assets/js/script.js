@@ -76,5 +76,9 @@ var isToday = function(displayDate) {
     }
 }
 
+var intervalRefresh = setInterval(function(){
+    createHours()
+}, (1000*60)*10)
+
 updateDayText(currentDay)
 createHours()
