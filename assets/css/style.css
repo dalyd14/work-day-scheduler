@@ -26,6 +26,7 @@ textarea{
   padding-bottom: 2rem;
 }
 
+/* Styling for displaying the date text */
 .display-3 {
   font-size: 3rem;
 }
@@ -37,11 +38,13 @@ textarea{
   margin: .75rem 0;
 }
 
+/* Styling for datepicker input */
 .date-picker {
   width: fit-content;
   display: inline;
 }
 
+/* Styling for the time rows buckets */
 .description{
   white-space: pre-wrap;
 }
@@ -64,25 +67,26 @@ textarea{
   border-top: 1px dashed #000000;
 }
 
+/* Styling for hour buckets whether they are in the past present or future */
 .past {
   background-color: #d3d3d3;
   color: black;
 }
-
 .present {
   background-color: #ff6961;
   color: black;
 }
-
 .future {
   background-color: #77dd77;
   color: black;
 }
 
+/* Additional styling for next and last days */
 #last-day, #next-day {
   margin: 15px;
 }
 
+/* This styling is for the save buttons */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -102,6 +106,8 @@ span.saveBtn:hover {
   cursor: pointer;
 }
 
+
+/* This CSS applies styling as the screen sizes change */
 @media (min-width: 576px) {
   .dateDisplay { 
     font-size: 1.25rem;
