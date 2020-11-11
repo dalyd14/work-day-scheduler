@@ -1,5 +1,19 @@
 # Work Day Scheduler
 
+## Approach/Enhancements
+- I wanted to keep the structure and look of the mockup and starter code
+- The page will update every ten minutes
+- Some enhancements that I made
+  - Instead of the app just displaying this current days agenda, the user can change the date to any present or future date and save tasks for that date
+  - When a tasks value is changed, the savebutton icon changes to notify the user that they need to save the task
+
+## Known Bugs
+- When the user clicks the save button on a mobile phone, the icon remains black until the user clicks elsewhere
+- The page reloads every 10 minutes and will delete and remove any unsaved progress
+  - for example: if you start writing a task at the 9 minute 59 second mark, the textarea content will be deleted while you are typing
+
+![Screenshot of App](./assets/images/screenshot.png)
+
 ## Motivation
 AS AN employee with a busy schedule\
 I WANT to add important events to a daily planner\
