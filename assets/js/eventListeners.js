@@ -23,14 +23,14 @@ $(".jumbotron").on("click", "#currentDay", function(){
     var datePicker = $("<input>")
         .attr("type", "text")
         .addClass("form-control date-picker")
-        .val(currentDay.format('MMMM Do, YYYY'));
+        .val(currentDay.format('MM/DD/YYYY'));
     
     $(this).replaceWith(datePicker)
     
     datePicker.datepicker({
         minDate: 0,
         onClose: function() {
-          $(this).trigger("change")
+            $(this).trigger("change")
         }
     })
 
@@ -43,7 +43,6 @@ $(".jumbotron").on("change", ".date-picker", function(){
     updateDayText(chosenDate);
     createHours();
 })
-
 $(".jumbotron").on("click", "#next-day", function(){
     currentDay = currentDay.add(1, 'days')
     updateDayText(currentDay);
