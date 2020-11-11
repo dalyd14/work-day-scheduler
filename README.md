@@ -12,7 +12,7 @@
 - The page reloads every 10 minutes and will delete and remove any unsaved progress
   - for example: if you start writing a task at the 9 minute 59 second mark, the textarea content will be deleted while you are typing
 
-![Screenshot of App](./assets/images/screenshot.png)
+![Screenshot of App](./assets/images/screenshot.PNG)
 
 ## Motivation
 AS AN employee with a busy schedule\
