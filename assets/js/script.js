@@ -19,6 +19,9 @@ var updateDayText = function(currentDay) {
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+//////////// Functions to create the daily planner hours
+/////////////////////////////////////////////////////////////////////////////////////
 var createHours = function() {
     $(".container").empty()
     var hourNum = 11;
@@ -53,10 +56,18 @@ var createSaveBtn = function() {
     return saveBtn
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+//////////// Other Functions
+/////////////////////////////////////////////////////////////////////////////////////
 var pastPresentFuture = function(date) {
+    // This function returns whether the time container is in the past present or future
+    // get the current time... the beginning of the hour
+    // i.e. if the time is Nov 11 2020 @ 3:32 pm the currentTime variable will be 11/11/20 3:00 pm
     var currentTime = moment().startOf('hour');
+    // the bucket time will equal the date which is the date and time of the individual bucket
     var bucketTime = date
 
+    // If statement to determine if the current time is before, the same, or after the bucket time
     if(bucketTime.isBefore(currentTime)) {
         return 'past'
     } else if(bucketTime.isSame(currentTime)) {
@@ -67,8 +78,12 @@ var pastPresentFuture = function(date) {
 }
 
 var isToday = function(displayDate) {
+    // This function returns whether or not the displayed date is today or not
+    // this variable holds the current day at 12 am
     var today = moment().startOf('day')
+    // the displayDate is the date of what is being displayed
     displayDate = displayDate.startOf('day')
+    // if the dates are the same return true or false
     if(displayDate.isSame(today)){
         return true
     } else {
@@ -77,8 +92,13 @@ var isToday = function(displayDate) {
 }
 
 var intervalRefresh = setInterval(function(){
+    // this function will create the display planner hours every 10 minutes
+    // Known Bug: the bug in this function is that it will delete and remove any tasks that were not saved every ten minutes
+    // therefore if you happen to be writing a task at the 9 minute 59 second mark your task will be deleted as you are typing
     createHours()
 }, (1000*60)*10)
 
+// Update the date display with the desired date: in this case the current day while loading the site
 updateDayText(currentDay)
+// create the hours for this day and populate the tasks
 createHours()
